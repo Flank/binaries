@@ -1,0 +1,42 @@
+name: Update binaries
+
+on:
+  push:
+    branches: [ master ]
+  workflow_dispatch:
+
+jobs:
+  upload_linux_binaries:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Archive Release
+        uses: thedoctor0/zip-release@master
+        with:
+          filename: 'binaries.zip'
+          exclusions: '*.git* update.sh updateBinariesWithFlankBash.bat updateBinariesWithFlankBash.sh readme.md'
+
+      - name: Run a multi-line script
+        env: 
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release upload linux binaries.zip --clobber
+  upload_windows_binaries:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Archive Release
+        uses: thedoctor0/zip-release@master
+        with:
+          filename: 'binaries.zip'
+          exclusions: '*.git* update.sh updateBinariesWithFlankBash.bat updateBinariesWithFlankBash.sh readme.md'
+
+      - name: Run a multi-line script
+        env: 
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release upload windows binaries.zip --clobber
