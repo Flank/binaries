@@ -16,7 +16,7 @@ jobs:
         uses: thedoctor0/zip-release@master
         with:
           filename: 'binaries.zip'
-          exclusions: '*.git* update.sh updateBinariesWithFlankBash.bat updateBinariesWithFlankBash.sh readme.md'
+          exclusions: '*.git* libatomic.so.1 update.sh updateBinariesWithFlankBash.bat updateBinariesWithFlankBash.sh readme.md'
 
       - name: Run a multi-line script
         env: 
@@ -33,7 +33,7 @@ jobs:
         uses: thedoctor0/zip-release@master
         with:
           filename: 'binaries.zip'
-          exclusions: '*.git* update.sh updateBinariesWithFlankBash.bat updateBinariesWithFlankBash.sh readme.md'
+          exclusions: '*.git* libatomic.so.1 update.sh updateBinariesWithFlankBash.bat updateBinariesWithFlankBash.sh readme.md'
 
       - name: Run a multi-line script
         env: 
