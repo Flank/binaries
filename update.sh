@@ -29,7 +29,7 @@ LLVM="llvm/llvm.tar.xz"
 if [ ! -f "llvm/llvm.tar" ]; then
   mkdir -p llvm
   echo "Downloading llvm"
-  curl -L https://github.com/llvm/llvm-project/releases/download/llvmorg-10.0.0/clang+llvm-10.0.0-x86_64-linux-gnu-ubuntu-18.04.tar.xz -o $LLVM
+  curl -L https://github.com/llvm/llvm-project/releases/download/llvmorg-12.0.0/clang+llvm-12.0.0-x86_64-linux-gnu-ubuntu-20.04.tar.xz -o $LLVM
   pushd llvm
   xz -d llvm.tar.xz
   tar -xf llvm.tar
@@ -48,7 +48,7 @@ SWIFT="swift/swift.tar.gz"
 if [ ! -f $SWIFT ]; then
   mkdir -p swift
   echo "Downloading swift"
-  curl -L https://swift.org/builds/swift-5.2.2-release/ubuntu1804/swift-5.2.2-RELEASE/swift-5.2.2-RELEASE-ubuntu18.04.tar.gz -o $SWIFT
+  curl -L https://swift.org/builds/swift-5.4.2-release/ubuntu2004/swift-5.4.2-RELEASE/swift-5.4.2-RELEASE-ubuntu20.04.tar.gz -o $SWIFT
   pushd swift
   tar -xzf swift.tar.gz
   echo "Updating swift-demangle"
